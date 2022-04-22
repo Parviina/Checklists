@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B20A0E852812CC98009DEE20 /* GroupDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A0E842812CC98009DEE20 /* GroupDetailsTableViewController.swift */; };
+		B20A0E872812CE1A009DEE20 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A0E862812CE19009DEE20 /* ChecklistItem.swift */; };
+		B20A0E892812DF3B009DEE20 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A0E882812DF3B009DEE20 /* ItemsTableViewCell.swift */; };
 		B223F02F28099D2700005F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B223F02E28099D2700005F5B /* AppDelegate.swift */; };
 		B223F03128099D2700005F5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B223F03028099D2700005F5B /* SceneDelegate.swift */; };
 		B223F03328099D2700005F5B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B223F03228099D2700005F5B /* MainViewController.swift */; };
 		B223F03628099D2700005F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B223F03428099D2700005F5B /* Main.storyboard */; };
 		B223F03828099D2B00005F5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B223F03728099D2B00005F5B /* Assets.xcassets */; };
 		B223F03B28099D2B00005F5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B223F03928099D2B00005F5B /* LaunchScreen.storyboard */; };
+		B26A96BE28103A5600624DE4 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A96BD28103A5600624DE4 /* GroupTableViewCell.swift */; };
 		B2ECB9F9280D927100BB9104 /* ChecklistGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ECB9F8280D927100BB9104 /* ChecklistGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B20A0E842812CC98009DEE20 /* GroupDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsTableViewController.swift; sourceTree = "<group>"; };
+		B20A0E862812CE19009DEE20 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		B20A0E882812DF3B009DEE20 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
 		B223F02B28099D2700005F5B /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B223F02E28099D2700005F5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B223F03028099D2700005F5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,6 +32,7 @@
 		B223F03728099D2B00005F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B223F03A28099D2B00005F5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B223F03C28099D2B00005F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B26A96BD28103A5600624DE4 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		B2ECB9F8280D927100BB9104 /* ChecklistGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B20A0E812812C8E4009DEE20 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B223F03228099D2700005F5B /* MainViewController.swift */,
+				B20A0E842812CC98009DEE20 /* GroupDetailsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B223F02228099D2700005F5B = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +75,11 @@
 		B223F02D28099D2700005F5B /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				B20A0E812812C8E4009DEE20 /* Controllers */,
+				B26A96BC28103A1B00624DE4 /* Cells */,
 				B2ECB9F7280D923700BB9104 /* Models */,
 				B223F02E28099D2700005F5B /* AppDelegate.swift */,
 				B223F03028099D2700005F5B /* SceneDelegate.swift */,
-				B223F03228099D2700005F5B /* MainViewController.swift */,
 				B223F03428099D2700005F5B /* Main.storyboard */,
 				B223F03728099D2B00005F5B /* Assets.xcassets */,
 				B223F03928099D2B00005F5B /* LaunchScreen.storyboard */,
@@ -70,10 +88,20 @@
 			path = Checklists;
 			sourceTree = "<group>";
 		};
+		B26A96BC28103A1B00624DE4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B26A96BD28103A5600624DE4 /* GroupTableViewCell.swift */,
+				B20A0E882812DF3B009DEE20 /* ItemsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B2ECB9F7280D923700BB9104 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B2ECB9F8280D927100BB9104 /* ChecklistGroup.swift */,
+				B20A0E862812CE19009DEE20 /* ChecklistItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,7 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20A0E892812DF3B009DEE20 /* ItemsTableViewCell.swift in Sources */,
+				B26A96BE28103A5600624DE4 /* GroupTableViewCell.swift in Sources */,
 				B223F03328099D2700005F5B /* MainViewController.swift in Sources */,
+				B20A0E872812CE1A009DEE20 /* ChecklistItem.swift in Sources */,
+				B20A0E852812CC98009DEE20 /* GroupDetailsTableViewController.swift in Sources */,
 				B223F02F28099D2700005F5B /* AppDelegate.swift in Sources */,
 				B2ECB9F9280D927100BB9104 /* ChecklistGroup.swift in Sources */,
 				B223F03128099D2700005F5B /* SceneDelegate.swift in Sources */,
