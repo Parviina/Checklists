@@ -12,16 +12,16 @@ import UIKit
 //2.
 
 class GroupDetailsTableViewController: UITableViewController {
-    var items: [ChecklistItem] = [
-        ChecklistItem(isChecked: true, name: "Walk the dog"),
-        ChecklistItem(isChecked: true, name: "Brush teeth"),
-        ChecklistItem(isChecked: false, name: "Learn IOS Development"),
-        ChecklistItem(isChecked: false, name: "Soccer practice"),
-        ChecklistItem(isChecked: true, name: "Eat ice cream"),
-        ChecklistItem(isChecked: false, name: "Dance in the rain")
-        
+    var items: [ChecklistItem] = []
+//        ChecklistItem(isChecked: true, name: "Walk the dog"),
+//        ChecklistItem(isChecked: true, name: "Brush teeth"),
+//        ChecklistItem(isChecked: false, name: "Learn IOS Development"),
+//        ChecklistItem(isChecked: false, name: "Soccer practice"),
+//        ChecklistItem(isChecked: true, name: "Eat ice cream"),
+//        ChecklistItem(isChecked: false, name: "Dance in the rain")
+//
     
-    ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +51,17 @@ class GroupDetailsTableViewController: UITableViewController {
         cell.CheckMark.isHidden = !item.isChecked
         
         return cell
-    }
-    
+        
+        }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "GroupDetailsToAddItem",
+                 let vc = segue.destination as? AddItemTableViewController,
+               let indexPath =
+                tableView.indexPathsForSelectedRows?.first{
+                       vc.title = "Edit item"
+                vc.item = items[indexPath.row]
+                //items[indexPath.row].name
+            }
 
     /*
     // Override to support conditional editing of the table view.

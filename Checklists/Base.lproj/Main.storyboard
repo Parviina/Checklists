@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J4m-K5-t4U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Checklists-->
         <scene sceneID="wcS-Z2-wwG">
             <objects>
                 <tableViewController id="58W-az-ulm" customClass="MainViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,8 +36,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Birthdays" translatesAutoresizingMaskIntoConstraints="NO" id="3Xz-qX-gsm">
-                                            <rect key="frame" x="36" y="19" width="36" height="51"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Birthdays" translatesAutoresizingMaskIntoConstraints="NO" id="3Xz-qX-gsm">
+                                            <rect key="frame" x="36" y="19" width="36" height="52"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -54,6 +54,7 @@
                                     <outlet property="iconView" destination="3Xz-qX-gsm" id="i1S-5p-aU3"/>
                                     <outlet property="subtitleLabel" destination="jdh-LQ-liD" id="MbE-KF-ya1"/>
                                     <outlet property="titleLabel" destination="ugL-Xd-67n" id="vbZ-MQ-djz"/>
+                                    <segue destination="J4m-K5-t4U" kind="show" id="Avb-aE-LFv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,12 +63,13 @@
                             <outlet property="delegate" destination="58W-az-ulm" id="wSZ-Eb-E3h"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" id="LvP-Wj-r8h"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWd-7n-yre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297.10144927536237" y="37.5"/>
+            <point key="canvasLocation" x="1207.2463768115942" y="37.5"/>
         </scene>
-        <!--Group Details Table View Controller-->
+        <!--Birthdays-->
         <scene sceneID="u0k-Nq-o6x">
             <objects>
                 <tableViewController id="J4m-K5-t4U" customClass="GroupDetailsTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,6 +120,7 @@
                                 <connections>
                                     <outlet property="CheckMark" destination="aOa-2e-zNd" id="ZVC-3Q-2Nx"/>
                                     <outlet property="ItemLabel" destination="hRJ-Wq-XZc" id="Zpv-S1-zJB"/>
+                                    <segue destination="wyB-vk-Q1H" kind="show" id="xE2-fz-XNy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -126,10 +129,17 @@
                             <outlet property="delegate" destination="J4m-K5-t4U" id="91i-9K-xzX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Birthdays" id="wLA-9Y-cGi">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="lkK-ZF-MTp">
+                            <connections>
+                                <segue destination="wyB-vk-Q1H" kind="show" id="fL9-fA-VWx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlP-ER-ZUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282.608695652174" y="37.5"/>
+            <point key="canvasLocation" x="2192.753623188406" y="37.5"/>
         </scene>
         <!--Add Item Table View Controller-->
         <scene sceneID="hfb-C7-9iZ">
@@ -228,15 +238,38 @@
                             <outlet property="delegate" destination="wyB-vk-Q1H" id="XUh-DO-aEf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ece-Qd-sCe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T8-3o-JnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055.072463768116" y="37.5"/>
+            <point key="canvasLocation" x="2965.217391304348" y="37.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KF4-2t-Rjb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZW-d0-6R5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lU8-7t-ccP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="58W-az-ulm" kind="relationship" relationship="rootViewController" id="p8o-Gf-q8o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3f0-Ef-Jbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297.10144927536237" y="37.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fL9-fA-VWx"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Birthdays" width="36" height="36"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
