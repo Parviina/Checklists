@@ -12,9 +12,12 @@ class DateTableViewCell: UITableViewCell {
     @IBOutlet weak var DateCell: UIDatePicker!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+         
+        ///Initialization code
     }
-
+   
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

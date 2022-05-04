@@ -9,10 +9,10 @@ import UIKit
 
 class MainViewController: UITableViewController  {
     let groups: [ChecklistGroup] = [
-        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, name: "My 20th birthday")]),
-        ChecklistGroup(title: "Groceries",imageName: "Groceries",items: [ChecklistItem(isChecked: true, name: "Cola")]),
-        ChecklistGroup(title: "To Do", imageName: "Chores",items: [ChecklistItem(isChecked: true, name: "Walk the dog")]),
-        ChecklistGroup(title: "Business Stuff", imageName: "Folder",items: [ChecklistItem(isChecked: true, name: "Eat banana")]),
+        ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, name: "My 20th birthday", remindMe: true,dueDate: Date())]),
+        ChecklistGroup(title: "Groceries",imageName: "Groceries",items: [ChecklistItem(isChecked: true, name: "Cola", remindMe: false)]),
+        ChecklistGroup(title: "To Do", imageName: "Chores",items: [ChecklistItem(isChecked: true, name: "Walk the dog", remindMe: true, dueDate: Date())]),
+        ChecklistGroup(title: "Business Stuff", imageName: "Folder",items: [ChecklistItem(isChecked: true, name: "Eat banana", remindMe: false)]),
     ]
 
     override func viewDidLoad() {
@@ -38,9 +38,9 @@ class MainViewController: UITableViewController  {
                 if let vc = segue.destination as? GroupDetailsTableViewController{
                     if let indexPath = tableView.indexPathsForSelectedRows?.first {
                         vc.items = groups[indexPath.row].items
-                    }}
-            }
+                    }}}
     }
-}
 
                     
+}
+
