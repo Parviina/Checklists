@@ -11,7 +11,7 @@ class MainViewController: UITableViewController  {
     let groups: [ChecklistGroup] = [
         ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, name: "My 20th birthday", remindMe: true,dueDate: Date())]),
         ChecklistGroup(title: "Groceries",imageName: "Groceries",items: [ChecklistItem(isChecked: true, name: "Cola", remindMe: false)]),
-        ChecklistGroup(title: "To Do", imageName: "Chores",items: [ChecklistItem(isChecked: true, name: "Walk the dog", remindMe: true, dueDate: Date())]),
+        ChecklistGroup(title: "To Do", imageName: "Chores",items: []),
         ChecklistGroup(title: "Business Stuff", imageName: "Folder",items: [ChecklistItem(isChecked: true, name: "Eat banana", remindMe: false)]),
     ]
 
@@ -30,7 +30,7 @@ class MainViewController: UITableViewController  {
         cell.titleLabel.text = group.title
         
         cell.iconView.image = UIImage(named: group.imageName)
-        
+        cell.subtitleLabel.text = group.getRemainings()
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
